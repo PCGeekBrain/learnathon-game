@@ -1,0 +1,22 @@
+/* the keyboards */
+
+#outputContainer{
+    position: relative;
+    width: auto;
+}
+
+#stdKeyboard, #stenoKeyboard {
+    position: relative;
+    margin-top: 50px;
+    top: 0px;
+    display: inline-block;
+    left: 0px;
+}
+
+div#stenoKeyboard {
+    float: right;
+}
+
+.game h3{
+    display: inline-block;
+}

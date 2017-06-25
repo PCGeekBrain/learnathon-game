@@ -974,6 +974,9 @@ $(document).keyup(function (event) {
 				translatedString += words[i].toEnglish() + ' ';
 			}
 			$('#output').html(demetafy(translatedString));
+			if (game) {
+				game.update_status()
+			}
 			document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight; //scroll the textarea to the bottom
 		}
 
