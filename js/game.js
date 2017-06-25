@@ -1,6 +1,7 @@
 var game = {
     words : [ 
-        [["is", "S"], ["it", "T"], ["about", "P"], ["had", "H"], ["can", "K"], ["with", "W"], ["are", "R"], ["of", "F"], ["the", "T"], [".", "P (left)"], ["are", "R"], ["be", "B"], ["ing", "G"], ["s", "S (left)"]]
+        [["is", "S"], ["it", "T"], ["about", "P"], ["had", "H"], ["can", "K"], ["with", "W"], ["are", "R"], ["of", "F"], ["the", "T"], [".", "P (left)"], ["are", "R"], ["be", "B"], ["ing", "G"], ["s", "S (left)"]],
+        ["sad", "happy"]
     ],
 
     running : false,
@@ -17,10 +18,17 @@ var game = {
     set_current_word : function(){
         options = game.words[game.level]
         selected_word = options[Math.floor(Math.random()*options.length)]
-        game.current_word = selected_word[0]
-        if (selected_word.length == 2){
-            game.current_tip = selected_word[1]
-        } else {
+        console.log("selected_word = ", selected_word)
+        if (selected_word.constructor === Array) {
+            game.current_word = selected_word[0]
+            if (selected_word.length == 2){
+                game.current_tip = selected_word[1]
+            } else {
+                game.current_tip = ""
+            }
+        }
+        else {
+            game.current_word = selected_word
             game.current_tip = ""
         }
 
